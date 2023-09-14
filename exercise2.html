@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .my-div {width: 25px; height: 25px;background-color:red; margin:1px;}
+  </style> 
+<body>
+    <div id="outer">
+        <div id="div1" class="my-div"></div>
+        <div id="div2" class="my-div"></div>
+        <div id="div3" class="my-div"></div>
+        <div id="div4" class="my-div"></div>
+        <div id="div5" class="my-div"></div>
+        <div id="div6" class="my-div"></div>
+        <div id="div7" class="my-div"></div>
+        <div id="div8" class="my-div"></div>
+        <div id="div9" class="my-div"></div>
+        <div id="div10" class="my-div"></div>
+        <div id="div11" class="my-div"></div>
+        <div id="div12" class="my-div"></div>
+        <div id="div13" class="my-div"></div>
+    </div>
+    <p id="id-text"></p>
+    <script>
+        function printDiv(evt) {
+            let divId = evt.target.id;
+            document.querySelector("#id-text").innerHTML = divId;
+        }
+
+        let allDiv = document.querySelector("#outer");
+    
+        allDiv.addEventListener("click", printDiv);
+    </script>
+</body>
+</html>

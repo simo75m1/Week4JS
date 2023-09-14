@@ -67,6 +67,12 @@ console.log(names);
 //Upper case the names and add into new array. 
 names = names.map(name => name.toUpperCase);
 
+// function makeList(array) {
+//   const lis = array.map(name => `<li>${name}</li>`).join("")
+//   return "<ul>"+lis+"</ul>"
+// }
+// console.log(makeList(names))
+
 
 const cars = [
   { id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000 },
