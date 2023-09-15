@@ -30,7 +30,18 @@
 <a href="/"><button>Back</button></a>
 <h1>Reflections</h1>
     <div style="border-radius: 5px 5px 5px 5px; width:80%; border: 1px solid gray; height:auto;">
-    My reflections on the topic
+        <ul>
+            <li>
+                preventDefault is used to prevent the default action of the "form". The form will send the data, then refresh the page and resetting the data on our page.
+            </li>
+            <li>
+                Using the innerhtml field you need to aware of possible security problems, as users can possibly inject malicous data through input fields, if not checked. 
+            </li>
+            <li>
+                For individual DOM element updates methods like appendChild, firstChild.remove or lastChild.remove we make updates to the single element. <br>
+                When re rendering the entire UL we use the makeList() method every time we make a change to the names list. The method also sets the innerHTMl of the UL to the list
+            </li>
+        </ul>
     </div>
 <script>
     //Will eventually (day 4) come from a server-API

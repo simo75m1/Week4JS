@@ -32,7 +32,9 @@
     <a href="/"><button>Back</button></a>
     <h1>Reflections</h1>
     <div style="border-radius: 5px 5px 5px 5px; width:80%; border: 1px solid gray; height:auto;">
-    My reflections on the topic
+    Event bubbling means that when an event occurs, this event "bubbles" to the nearest eventListener. <br>
+    When clicking one of these red div's the event moves to the nearest listener which is on the outer box which contains all of them. <br>
+    The method then uses evt.target.id to find the specific div id that sent the event originally.
     </div>
 
     <script>

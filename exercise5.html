@@ -26,7 +26,13 @@
     <a href="/"><button>Back</button></a>
     <h1>Reflections</h1>
     <div style="border-radius: 5px 5px 5px 5px; width:80%; border: 1px solid gray; height:auto;">
-    My reflections on the topic
+    <ul>
+        <li>The javascript template string is created for each car object in the list. This list is then placed into the innerHTML of the tablebody.</li>
+        <li>Map method was used to create this new array. </li>
+        <li>Filter was used to create a new car list, filtered for the price. </li>
+        <li>After filtering the car objects, i reuse the makeList() method and return it to the table body to update the list.</li>
+    </ul>
+
     </div>
 
     <script>
@@ -59,8 +65,6 @@
         const carTable = makeList(cars);
         document.querySelector("#tbody").innerHTML = carTable;
     }
-    
-
 
       </script>
 </body>
