@@ -4,24 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>body{box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}</style>
 </head>
-<body>
-
+<body style="padding-left: 20px;height:100vh;width:97%; border-left: 1px solid grey;border-right: 1px solid grey;">
+<h1>Exercise 1</h1>
 <div id="d1" style="width: 100px;margin: 1px;">&nbsp;</div>
 <div id="d2" style="width: 100px;margin: 1px;">&nbsp;</div>
 <div id="d3" style="width: 100px;margin: 1px;">&nbsp;</div>
 <button id="color-button">Change colors!</button>
+<br><br>
+<a href="/"><button>Back</button></a>
+<h1>Reflections</h1>
+    <div id="reflections" style="background-color: white; border-radius: 5px 5px 5px 5px; width:80%; border: 1px solid gray; height:auto;">
+    My reflections on the topic
+    </div>
 
 
 <script>
-    document.querySelectorAll("div").element.style.backgroundColor("blue")
+    const divs = document.querySelectorAll("div");
+    for(const div of divs){
+            div.style.backgroundColor = "blue";
+    }
+    document.querySelector("#reflections").style.backgroundColor = "white";
+    
     let button = document.querySelector("#color-button")
     button.addEventListener("click", changeDivColor)
 
     function changeDivColor(){
-        document.querySelector("#d1").element.style.backgroundColor("red")
-        document.querySelector("#d2").element.style.backgroundColor("yellow")
-        document.querySelector("#d3").element.style.backgroundColor("green")
+        document.querySelector("#d1").style.backgroundColor = "red";
+        document.querySelector("#d2").style.backgroundColor = "yellow";
+        document.querySelector("#d3").style.backgroundColor = "purple";
     }
 </script>
 </body>

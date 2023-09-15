@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <style>
     .my-div {width: 25px; height: 25px;background-color:red; margin:1px;}
+    body{box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
   </style> 
-<body>
+<body style="padding-left: 20px;height:100vh;width:97%; border-left: 1px solid grey;border-right: 1px solid grey;">
+    <h1>Exercise 2</h1>
     <div id="outer">
         <div id="div1" class="my-div"></div>
         <div id="div2" class="my-div"></div>
@@ -25,14 +28,17 @@
         <div id="div13" class="my-div"></div>
     </div>
     <p id="id-text"></p>
+    <br><br>
+    <a href="/"><button>Back</button></a>
+    <h1>Reflections</h1>
+    <div style="border-radius: 5px 5px 5px 5px; width:80%; border: 1px solid gray; height:auto;">
+    My reflections on the topic
+    </div>
+
     <script>
         function printDiv(evt) {
             let divId = evt.target.id;
-<<<<<<< HEAD
             document.querySelector("#id-text").innerHTML = divId;
-=======
-            document.querySelector("#id-text").innerHTML =divId;
->>>>>>> 9d9d48dd9863e1f5736ffd8e38e89a7360536ac7
         }
 
         let allDiv = document.querySelector("#outer");

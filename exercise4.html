@@ -4,18 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>body{box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}</style>
 </head>
-<body>
+<body style="padding-left: 20px;height:100vh;width:97%; border-left: 1px solid grey;border-right: 1px solid grey;">
+    <h1>Exercise 4</h1>
     <select id="car-selector">
         <!-- Options will be populated by JavaScript -->
       </select>
       <h2>Selected Brand</h2>
-      <h4 id="car-make"></h4>
-      
+      <h4 id="car-make">Ford</h4>
+      <br><br>
+      <a href="/"><button>Back</button></a>
+      <h1>Reflections</h1>
+      <div style="border-radius: 5px 5px 5px 5px; width:80%; border: 1px solid gray; height:auto;">
+      My reflections on the topic
+      </div>
       <script>
-      const cars = ["Ford", "WW", "Toyota", "Volvo"]; //Assume this was fechedfrom the backend
-      //TODO 
+      const cars = ["Ford", "VW", "Toyota", "Volvo"]; //Assume this was fechedfrom the backend
       const selector = document.querySelector("#car-selector");
+      const carMake = document.querySelector("#car-make");
+
+      const carOptions = cars.forEach(car => {
+            const option = document.createElement("option")
+            option.value = car;
+            option.textContent = car;
+            selector.appendChild(option);
+      });
+
+      selector.addEventListener("change", function() {
+        const selectedCar = selector.value;
+        carMake.textContent = selectedCar;
+      })
+
       </script>
       
 </body>
