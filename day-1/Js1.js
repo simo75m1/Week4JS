@@ -65,13 +65,14 @@ names = names.filter(name => name.length<=3);
 console.log(names);
 
 //Upper case the names and add into new array. 
-names = names.map(name => name.toUpperCase);
+names = names.map(name => name.toUpperCase());
 
-// function makeList(array) {
-//   const lis = array.map(name => `<li>${name}</li>`).join("")
-//   return "<ul>"+lis+"</ul>"
-// }
-// console.log(makeList(names))
+
+function makeList(array) {
+   const lis = array.map(name => `<li>${name}</li>`).join("")
+   return "<ul>"+lis+"</ul>"
+ }
+ console.log(makeList(names))
 
 
 const cars = [
@@ -88,6 +89,12 @@ const carsPrice = cars.filter(car => car.price < 5000);
 console.log(newerCars);
 console.log(carsVolvo);
 console.log(carsPrice);
+
+function makeSQLStatement(array){
+  const sqlStatements = array.map(car => `INSERT INTO cars (id,year,make,model,price) VALUES (${car.id}, ${car.year}, ${car.make}, ${car.model},${car.price});`).join("")
+  return sqlStatements;
+}
+console.log(makeSQLStatement(cars));
 
 
 
