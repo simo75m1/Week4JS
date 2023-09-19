@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .parent {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1px 1px;
+        }
+        .item {
+            background-color: lightskyblue;
+            border: 1px solid #fff;
+            height: 350px;
+            width:800px;
+            overflow-y: scroll;
+        }
+        input[type="radio"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        }
+        input[type="radio"]:checked::before {
+        transform: scale(1);
+        }
+        input[type="radio"] {
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid currentColor;
+        border-radius: 50%;
+        transform: translateY(-0.075em);
+        }
+.form-control {
+  margin-top: 1em;
+}
+    </style>
+    
+</head>
+<body style="font-family: sans-serif">
+<div style="margin-left: 10%;width: 75%;margin-right: auto">
+    <h2>Car's 'R' Us Client Demo - Version poor ;-)</h2>
+    <a href="/"><button>Back</button></a>
+    <br><br>
+    <div class="parent">
+        <div class="item">
+            <h3>Show all Members or Cars</h3>
+            <button id="btn-get-all-cars">Get all cars</button>
+            <button id="btn-get-all-members">Get all members</button>
+            <p id="show-all-data">Show what you find here</p>
+        </div>
+        <div class="item">
+            <h3>Find a single Member or Car</h3>
+            <label id="id-label" for="text-for-id">Id/Username</label>&nbsp;<input id="text-for-id"/>
+            <button id="search-for-id-btn">Find</button> <br>
+            <p>Choose search result</p>
+            <label class="form-control">
+                <input id="radio-car" type="radio" name="result" value="Car" checked/>
+                Car
+              </label>
+              <label class="form-control">
+                <input id="radio-member" type="radio" name="result" value="Member"/>
+                Member
+              </label>
+            <p id="show-single-data">Show what you find here</p>
+        </div>
+        <div class="item">
+            <h3>Add a Member</h3>
+            <div><label for="input-field1">Username</label>&nbsp;<input id="input-field1"></div>
+            <div><label for="input-field2">E-mail</label>&nbsp;<input id="input-field2"></div>
+            <div><label for="input-field3">Password</label>&nbsp;<input id="input-field3" type="password"></div>
+            <p> ..... remaining fields</p>
+            <button id="submit-post-btn">Submit new item</button>
+            <p id="post-request-return"></p>
+            <p>Show returned data, if any</p>
+            <p>Use one of the two GET pages to verify that "something" was added</p>
+        </div>
+        <div class="item">
+            <h3>Edit a Car</h3>
+            <label for="text-for-id2">Id</label>&nbsp;<input id="text-for-id2"/>
+            <button id="find-for-edit">Find item to edit</button>
+            <button id="submit-for-edit">Submit edited item</button><br><br>
+            <label for="edit-brand"></label>Brand<input id="edit-brand"><br><br>
+            <label for="edit-model"></label>Model<input id="edit-model"><br><br>
+            <label for="edit-price"></label>Price<input id="edit-price"><br><br>
+
+
+            <p>Use one of the two GET pages to verify that "something" was edited</p>
+        </div>
+    </div>
+</div>
+</body>
+<script src="client.js"></script>
+</html>
