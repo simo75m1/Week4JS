@@ -93,11 +93,19 @@
             <label for="edit-model"></label>Model<input id="edit-model"><br><br>
             <label for="edit-price"></label>Price<input id="edit-price"><br><br>
 
-
             <p>Use one of the two GET pages to verify that "something" was edited</p>
         </div>
     </div>
 </div>
+    <h2>Reflections</h2>
+    <p>-To create the object that i can add, i first take all the input from the fields. After that you can place it into an array to the corresponding "properties" on the member entity in the backend.<br>
+        After creating the object, i use the "makeOptions("POST", data);" method from the fetch guidelines document. This method allows you to set up post, patch, put methods with a body in JSON format.<br>
+        After receiving the body again i fetch using "fetch("http://localhost:8080/api/members", options);" which then reaches my POST endpoint. 
+        The "options" in the url is the body, and the request type that is sent. 
+        So for the Edit a car box i use "makeOptions("PUT", data);" instead, with the data from those fields.
+        <br>
+
+    </p>
 </body>
 <script src="client.js"></script>
 </html>

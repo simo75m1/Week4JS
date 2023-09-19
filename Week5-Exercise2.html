@@ -110,6 +110,13 @@
 </div>
 <br>
     <a href="/"><button>Back</button></a>
+    <br>
+    <h2>Reflections</h2>
+    <p>
+    -To solve this, event bubbling was used on the id of the `svg` tag which contains all the paths within. Each path have their own id. Therefor, when one is clicked we can catch the id of that click with event.target.id and now exactly which `path` was clicked on. <br>
+    -To change colors i used style.fill on that id both to change the color to black on the one that was clicked, but also to change the previous country back to white/gray ish. <br>
+    -The API has a GET endpoint that can receive an ID in the url to get specific data, and that was therefor used to get the data displayed on the side. 
+    </p>
 </body>
 <script>
     
