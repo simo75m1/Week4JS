@@ -27,6 +27,7 @@
     </style>
 </head>
 <body>
+    <h1>Select a country using the mouse, for info about the country</h1>
 <div id="outer-box">
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +143,7 @@
         document.querySelector("#country-info-box").style.display = "block";
         document.getElementById(lastCountry).style.fill = "#dcdcdc";
         const countryId = event.target.id;
-        document.getElementById(countryId).style.fill = "#000000";
+        document.getElementById(countryId).style.fill = "#5f6ff2";
         lastCountry = countryId;
         url = "https://countries.plaul.dk/api/countries/" + countryId;
         fetchData(url);

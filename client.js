@@ -1,3 +1,5 @@
+import { getUrl } from "./settings.js";
+
 let url;
 const fetchData = function(url, object){
     fetch(url)
@@ -31,11 +33,11 @@ const fetchData = function(url, object){
 }
 
 const fetchAllCars = () => {
-    url = "http://localhost:8080/api/cars";
+    url = getUrl()+"/api/cars";
     fetchData(url, "cars");
 }
 const fetchAllMembers = () => {
-    url = "http://localhost:8080/api/members"
+    url = getUrl()+"/api/members"
     fetchData(url, "members");
 }
 const fetchDataFromId = () => {
@@ -43,10 +45,10 @@ const fetchDataFromId = () => {
     const selected = document.querySelector(`input[name="result"]:checked`);
     let searchType;
     if(selected.value === "Car"){
-        url = "http://localhost:8080/api/cars/"+searchId;
+        url = getUrl()+"/api/cars/"+searchId;
         searchType = "oneCar";
     } else if(selected.value === "Member"){
-        url = "http://localhost:8080/api/members/"+searchId;
+        url = getUrl()+"/api/members/"+searchId;
         searchType = "oneMember";
     }
     fetchData(url, searchType);
@@ -55,7 +57,7 @@ const fetchDataFromId = () => {
 const fetchDataToEdit = () => {
     const searchId = document.querySelector("#text-for-id2").value;
     if(searchId > 0){
-        url = "http://localhost:8080/api/cars/"+searchId;
+        url = getUrl()+"/api/cars/"+searchId;
         fetchData(url, "editOneCar")
     }
     else{
@@ -105,7 +107,7 @@ const addMember = async () => {
     const data = {username: usernameInput, email: emailInput, password: passwordInput};
     const options = makeOptions("POST", data);
     try{
-        const response = fetch("http://localhost:8080/api/members", options);
+        const response = fetch(getUrl+"/api/members", options);
         if(response.ok){
             const responseData = await response.json();
             console.log("Member created: " +responseData);
@@ -123,8 +125,7 @@ const editCar = () => {
     const priceInput = document.querySelector("#edit-price").value;
     const data = {id: carId, brand: brandInput, model: modelInput, pricePrDay: priceInput};
     const options = makeOptions("PUT", data);
-    fetch("http://localhost:8080/api/cars/"+carId, options);
-
+    fetch(getUrl()+"/api/cars/"+carId, options);
 
 }
 
